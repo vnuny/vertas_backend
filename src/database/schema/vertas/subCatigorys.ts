@@ -6,9 +6,11 @@ export const subCatigorysTable = VERTAS.table(
   "sub_catigorys",
   {
     id: uuid("id").defaultRandom().primaryKey(),
-    catigoryId: uuid("catigory_id").references(() => catigorysTable.id, {
-      onDelete: "cascade"
-    }),
+    catigoryId: uuid("catigory_id")
+      .references(() => catigorysTable.id, {
+        onDelete: "cascade"
+      })
+      .notNull(),
     title: varchar("title", { length: 255 }).notNull(),
     description: varchar("description").notNull(),
     poster: text("poster").notNull(),
