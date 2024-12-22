@@ -7,6 +7,8 @@ import express, {
 import AuthRouter from "./routes/admin/auth/auth";
 import AdminRouter from "./routes/admin/admin";
 import cookieParser from "cookie-parser";
+import BlogRouter from "./routes/blog/blog";
+import ImagesRouter from "./routes/admin/images/images";
 let PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -21,6 +23,9 @@ app.get("/", (req, res) => {
 
 app.use("/auth", AuthRouter);
 app.use("/admin", AdminRouter);
+app.use("/blog", BlogRouter);
+app.use("/images", ImagesRouter);
+
 app.use((req, res, next) => {
   const err = new Error("Not Found") as ErrorRequestHandler & {
     status: number;

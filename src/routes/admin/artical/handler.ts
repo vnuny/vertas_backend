@@ -64,11 +64,12 @@ export async function CreateArticalHandler(
       cardPoster: cardPosterUrl,
       tags,
       slug,
-      blocks
+      blocks: JSON.stringify(blocks)
     });
+    console.timeLog(JSON.stringify(blocks));
     res.status(200).json({
-      message: "Artical created successfully",
-      data: newArtical
+      message: "Artical created successfully"
+      // data: newArtical
     });
   } catch (error) {
     catchError(error, next);

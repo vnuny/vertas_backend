@@ -1,6 +1,6 @@
 import { VERTAS } from "../schema";
 import { uuid, varchar, text, timestamp, index } from "drizzle-orm/pg-core";
-import { catigorysTable } from "./catigorys";
+import catigorysTable from "./catigorys";
 
 export const subCatigorysTable = VERTAS.table(
   "sub_catigorys",

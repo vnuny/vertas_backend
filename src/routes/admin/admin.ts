@@ -28,6 +28,7 @@ import {
   AdminDeleteArticalValidation,
   AdminUpdateArticalValidation
 } from "./artical/validation";
+import AuthMiddleware from "./auth/authMiddleware";
 
 const AdminRouter = Router();
 // AdminRouter.use(AuthMiddleware);

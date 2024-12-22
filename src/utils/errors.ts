@@ -21,10 +21,9 @@ export function cusError(
 }
 
 export function catchError(err: any, next: NextFunction) {
-  if (!err.status) {
+  if (err.status) {
     return next(err);
   } else {
-    console.log(err);
     return next({
       status: 500,
       message: "Something went wrong, please try again"
